@@ -1,0 +1,380 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn-svelte/tailwind.css';
+@import '@fontsource-variable/inter';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+	--background: #fbfcff;
+	--foreground: #101b32;
+	--card: #ffffff;
+	--card-foreground: #101b32;
+	--popover: #ffffff;
+	--popover-foreground: #101b32;
+	--primary: #6495ed;
+	--primary-foreground: #10234a;
+	--secondary: #edf3ff;
+	--secondary-foreground: #223b68;
+	--muted: #f1f4f9;
+	--muted-foreground: #5b677d;
+	--accent: #edbc64;
+	--accent-foreground: #3d2b06;
+	--destructive: #d53f4f;
+	--border: #dbe3f1;
+	--input: #dbe3f1;
+	--ring: #4f7fd3;
+	--chart-1: #6495ed;
+	--chart-2: #edbc64;
+	--chart-3: #7bbec5;
+	--chart-4: #8f7cd6;
+	--chart-5: #e7886c;
+	--radius: 0.875rem;
+	--sidebar: #f7f9fd;
+	--sidebar-foreground: #101b32;
+	--sidebar-primary: #6495ed;
+	--sidebar-primary-foreground: #10234a;
+	--sidebar-accent: #edbc64;
+	--sidebar-accent-foreground: #3d2b06;
+	--sidebar-border: #dbe3f1;
+	--sidebar-ring: #4f7fd3;
+}
+
+.dark {
+	--background: #0d1423;
+	--foreground: #eef4ff;
+	--card: #141e31;
+	--card-foreground: #eef4ff;
+	--popover: #141e31;
+	--popover-foreground: #eef4ff;
+	--primary: #8db3f7;
+	--primary-foreground: #10234a;
+	--secondary: #1c2940;
+	--secondary-foreground: #e2ebff;
+	--muted: #1a2538;
+	--muted-foreground: #a8b5cc;
+	--accent: #f0c87f;
+	--accent-foreground: #382704;
+	--destructive: #f06f7c;
+	--border: #2b3952;
+	--input: #34445f;
+	--ring: #8db3f7;
+	--chart-1: #8db3f7;
+	--chart-2: #f0c87f;
+	--chart-3: #8ed1d6;
+	--chart-4: #a899ed;
+	--chart-5: #f1a08a;
+	--sidebar: #111a2b;
+	--sidebar-foreground: #eef4ff;
+	--sidebar-primary: #8db3f7;
+	--sidebar-primary-foreground: #10234a;
+	--sidebar-accent: #f0c87f;
+	--sidebar-accent-foreground: #382704;
+	--sidebar-border: #2b3952;
+	--sidebar-ring: #8db3f7;
+}
+
+@theme inline {
+	--font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+	--font-mono: ui-monospace, 'SFMono-Regular', 'Cascadia Code', monospace;
+	--color-sidebar-ring: var(--sidebar-ring);
+	--color-sidebar-border: var(--sidebar-border);
+	--color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+	--color-sidebar-accent: var(--sidebar-accent);
+	--color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+	--color-sidebar-primary: var(--sidebar-primary);
+	--color-sidebar-foreground: var(--sidebar-foreground);
+	--color-sidebar: var(--sidebar);
+	--color-chart-5: var(--chart-5);
+	--color-chart-4: var(--chart-4);
+	--color-chart-3: var(--chart-3);
+	--color-chart-2: var(--chart-2);
+	--color-chart-1: var(--chart-1);
+	--color-ring: var(--ring);
+	--color-input: var(--input);
+	--color-border: var(--border);
+	--color-destructive: var(--destructive);
+	--color-accent-foreground: var(--accent-foreground);
+	--color-accent: var(--accent);
+	--color-muted-foreground: var(--muted-foreground);
+	--color-muted: var(--muted);
+	--color-secondary-foreground: var(--secondary-foreground);
+	--color-secondary: var(--secondary);
+	--color-primary-foreground: var(--primary-foreground);
+	--color-primary: var(--primary);
+	--color-popover-foreground: var(--popover-foreground);
+	--color-popover: var(--popover);
+	--color-card-foreground: var(--card-foreground);
+	--color-card: var(--card);
+	--color-foreground: var(--foreground);
+	--color-background: var(--background);
+	--radius-sm: calc(var(--radius) * 0.6);
+	--radius-md: calc(var(--radius) * 0.8);
+	--radius-lg: var(--radius);
+	--radius-xl: calc(var(--radius) * 1.4);
+	--radius-2xl: calc(var(--radius) * 1.8);
+	--radius-3xl: calc(var(--radius) * 2.2);
+	--radius-4xl: calc(var(--radius) * 2.6);
+}
+
+@utility container {
+	width: 100%;
+	margin-inline: auto;
+	padding-inline: --spacing(5);
+
+	@media (width >= 48rem) {
+		padding-inline: --spacing(8);
+	}
+
+	@media (width >= 80rem) {
+		max-width: 80rem;
+	}
+}
+
+@utility section {
+	padding-block: --spacing(20);
+
+	@media (width >= 48rem) {
+		padding-block: --spacing(28);
+	}
+}
+
+@utility grid-backdrop {
+	background-image:
+		linear-gradient(
+			to right,
+			color-mix(in srgb, var(--primary) 14%, transparent) 1px,
+			transparent 1px
+		),
+		linear-gradient(
+			to bottom,
+			color-mix(in srgb, var(--primary) 14%, transparent) 1px,
+			transparent 1px
+		);
+	background-size: 4.5rem 4.5rem;
+	mask-image: radial-gradient(ellipse 78% 68% at 68% 32%, #000 0%, transparent 72%);
+}
+
+@layer base {
+	* {
+		@apply border-border outline-ring/50;
+	}
+
+	html {
+		@apply font-sans;
+		scroll-behavior: smooth;
+		-webkit-font-smoothing: antialiased;
+		text-rendering: optimizeLegibility;
+	}
+
+	body {
+		@apply bg-background text-foreground m-0 min-w-80;
+	}
+
+	h1,
+	h2,
+	h3 {
+		text-wrap: balance;
+	}
+
+	p {
+		text-wrap: pretty;
+	}
+
+	a,
+	button {
+		@apply focus-visible:ring-ring/40 focus-visible:ring-3 focus-visible:outline-none;
+	}
+
+	::selection {
+		background: var(--accent);
+		color: var(--accent-foreground);
+	}
+
+	:target {
+		scroll-margin-top: --spacing(20);
+	}
+}
+
+.hero-wash {
+	background:
+		radial-gradient(
+			circle at 78% 28%,
+			color-mix(in srgb, var(--primary) 22%, transparent),
+			transparent 31%
+		),
+		radial-gradient(
+			circle at 90% 68%,
+			color-mix(in srgb, var(--accent) 24%, transparent),
+			transparent 25%
+		);
+}
+
+.hero-gradient {
+	background: linear-gradient(118deg, var(--primary) 5%, #4675ca 48%, var(--accent) 108%);
+	background-clip: text;
+	color: transparent;
+}
+
+.edge-visual {
+	display: grid;
+	place-items: center;
+}
+
+.orbit {
+	position: absolute;
+	inset: 50%;
+	translate: -50% -50%;
+	border: 1px solid color-mix(in srgb, var(--primary) 28%, transparent);
+	border-radius: 9999px;
+}
+
+.orbit::before,
+.orbit::after {
+	position: absolute;
+	width: 0.55rem;
+	height: 0.55rem;
+	content: '';
+	background: var(--accent);
+	border: 3px solid var(--background);
+	border-radius: 9999px;
+	box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 60%, transparent);
+}
+
+.orbit::before {
+	top: 0;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.orbit::after {
+	bottom: 0;
+	left: 50%;
+	transform: translate(-50%, 50%);
+}
+
+.orbit-outer {
+	width: 92%;
+	height: 92%;
+	transform: rotate(-34deg);
+}
+
+.orbit-middle {
+	width: 69%;
+	height: 69%;
+	border-style: dashed;
+	transform: rotate(24deg);
+}
+
+.orbit-inner {
+	width: 44%;
+	height: 44%;
+	border-color: color-mix(in srgb, var(--accent) 58%, transparent);
+}
+
+.edge-core {
+	display: grid;
+	width: 32%;
+	aspect-ratio: 1;
+	place-items: center;
+	background: color-mix(in srgb, var(--card) 90%, transparent);
+	border: 1px solid color-mix(in srgb, var(--primary) 32%, transparent);
+	border-radius: 2rem;
+	box-shadow:
+		0 2rem 6rem color-mix(in srgb, var(--primary) 25%, transparent),
+		inset 0 1px 0 #ffffff;
+	transform: rotate(-3deg);
+}
+
+.edge-node {
+	position: absolute;
+	display: grid;
+	place-items: center;
+	width: 4.25rem;
+	aspect-ratio: 1;
+	font-family: var(--font-mono);
+	font-size: 0.62rem;
+	font-weight: 600;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	background: var(--card);
+	border: 1px solid var(--border);
+	border-radius: 1.15rem;
+	box-shadow: 0 1rem 2.5rem color-mix(in srgb, var(--foreground) 10%, transparent);
+}
+
+.node-one {
+	top: 5%;
+	left: 43%;
+}
+
+.node-two {
+	top: 43%;
+	right: 1%;
+}
+
+.node-three {
+	right: 32%;
+	bottom: 5%;
+}
+
+.node-four {
+	top: 48%;
+	left: 1%;
+}
+
+.feature-icon {
+	display: grid;
+	width: 3rem;
+	aspect-ratio: 1;
+	place-items: center;
+	color: var(--primary);
+	background: color-mix(in srgb, var(--primary) 13%, var(--card));
+	border-radius: 0.9rem;
+}
+
+.feature-icon-accent {
+	color: var(--accent-foreground);
+	background: color-mix(in srgb, var(--accent) 64%, var(--card));
+}
+
+.legacy-glow {
+	background:
+		linear-gradient(125deg, color-mix(in srgb, var(--primary) 10%, transparent), transparent 50%),
+		linear-gradient(305deg, color-mix(in srgb, var(--accent) 18%, transparent), transparent 48%);
+}
+
+.feature-icon-muted {
+	color: var(--muted-foreground);
+	background: var(--muted);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.orbit-middle {
+		animation: orbit-turn 28s linear infinite;
+	}
+
+	.orbit-inner {
+		animation: orbit-turn 20s linear infinite reverse;
+	}
+
+	.edge-core {
+		animation: core-float 7s ease-in-out infinite;
+	}
+}
+
+@keyframes orbit-turn {
+	to {
+		transform: rotate(384deg);
+	}
+}
+
+@keyframes core-float {
+	0%,
+	100% {
+		translate: 0 0;
+	}
+	50% {
+		translate: 0 -0.6rem;
+	}
+}

@@ -1,0 +1,63 @@
+---
+import { ArrowDown } from '@lucide/astro';
+
+import GithubIcon from '../icons/GithubIcon.astro';
+import { Button } from '../ui/button/index.js';
+
+const githubUrl = 'https://github.com/sunriselayer/sunrise-edge';
+---
+
+<section id="top" class="border-border relative isolate overflow-hidden border-b">
+	<div class="grid-backdrop pointer-events-none absolute inset-0 -z-20" aria-hidden="true"></div>
+	<div class="hero-wash pointer-events-none absolute inset-0 -z-10" aria-hidden="true"></div>
+
+	<div
+		class="container grid min-h-[calc(100svh-4rem)] items-center gap-14 py-20 lg:grid-cols-[1.08fr_0.92fr] lg:py-24"
+	>
+		<div id="edge" class="flex flex-col items-start gap-7">
+			<div class="flex flex-col gap-5">
+				<p class="text-foreground font-mono text-xs font-semibold tracking-[0.22em] uppercase">
+					The next Sunrise protocol
+				</p>
+				<h1
+					class="text-5xl leading-[0.98] font-semibold tracking-[-0.055em] sm:text-6xl lg:text-7xl xl:text-[5.5rem]"
+				>
+					The blockchain that
+					<span class="hero-gradient block">rises on demand.</span>
+				</h1>
+				<p class="text-muted-foreground max-w-2xl text-lg leading-relaxed md:text-xl">
+					Sunrise Edge is the world’s first serverless Layer 1 — a blockchain designed to run on
+					demand across edge functions, cloud functions, and traditional servers.
+				</p>
+			</div>
+			<div class="flex flex-wrap gap-3">
+				<Button href={githubUrl} size="lg">
+					<GithubIcon data-icon="inline-start" />
+					Explore Sunrise Edge
+				</Button>
+				<Button href="#architecture" variant="outline" size="lg">
+					See the architecture
+					<ArrowDown data-icon="inline-end" />
+				</Button>
+			</div>
+			<p class="text-muted-foreground text-xs leading-relaxed">
+				The next-generation Sunrise protocol is currently under active development.
+			</p>
+		</div>
+
+		<div class="relative mx-auto w-full max-w-xl" aria-hidden="true">
+			<div class="edge-visual relative aspect-square">
+				<div class="orbit orbit-outer"></div>
+				<div class="orbit orbit-middle"></div>
+				<div class="orbit orbit-inner"></div>
+				<div class="edge-core">
+					<img src="/favicon.svg" alt="" class="size-20 sm:size-24" width="96" height="96" />
+				</div>
+				<div class="edge-node node-one"><span>event</span></div>
+				<div class="edge-node node-two"><span>state</span></div>
+				<div class="edge-node node-three"><span>proof</span></div>
+				<div class="edge-node node-four"><span>commit</span></div>
+			</div>
+		</div>
+	</div>
+</section>

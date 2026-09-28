@@ -1,0 +1,67 @@
+---
+import { Boxes, CloudLightning, CodeXml } from '@lucide/astro';
+
+import * as Card from '../ui/card/index.js';
+
+const strengths = [
+	{
+		icon: CloudLightning,
+		title: 'Serverless from first principles',
+		description:
+			'Validators become event-driven state machines instead of always-on processes. Run only when work arrives, keep infrastructure lean, and spend less time maintaining idle servers.'
+	},
+	{
+		icon: Boxes,
+		title: 'Parallel execution at the core',
+		description:
+			'The throughput mindset of Solana meets the object-centric clarity of Sui. Declared state access unlocks deterministic conflict detection and scalable parallel transaction processing.'
+	},
+	{
+		icon: CodeXml,
+		title: 'WebAssembly contracts',
+		description:
+			'Deterministic, metered WebAssembly gives developers a portable contract target with a Rust-first SDK — without binding the protocol to one cloud or execution environment.'
+	}
+];
+---
+
+<section id="architecture" class="section border-border border-b">
+	<div class="container">
+		<div class="grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-end">
+			<div>
+				<p class="text-foreground font-mono text-xs font-semibold tracking-[0.22em] uppercase">
+					Built for the edge
+				</p>
+				<h2 class="mt-4 text-4xl leading-tight font-semibold tracking-[-0.04em] sm:text-5xl">
+					A lighter way to run a Layer 1.
+				</h2>
+			</div>
+			<p class="text-muted-foreground max-w-2xl text-lg leading-relaxed lg:justify-self-end">
+				Sunrise Edge separates blockchain safety from process lifetime. The result is an
+				architecture made for elastic infrastructure, high-throughput execution, and open contract
+				development.
+			</p>
+		</div>
+
+		<div class="mt-14 grid gap-5 lg:grid-cols-3">
+			{
+				strengths.map((strength, index) => {
+					const Icon = strength.icon;
+					return (
+						<Card.Root class="group h-full overflow-hidden">
+							<Card.Header>
+								<div class:list={['feature-icon', index === 1 && 'feature-icon-accent']}>
+									<Icon class="size-6" stroke-width={1.8} />
+								</div>
+								<Card.Title>{strength.title}</Card.Title>
+							</Card.Header>
+							<Card.Content>
+								<Card.Description>{strength.description}</Card.Description>
+							</Card.Content>
+						</Card.Root>
+					);
+				})
+			}
+		</div>
+	</div>
+</section>

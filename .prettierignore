@@ -1,0 +1,4 @@
+.astro/
+.agents/
+dist/
+node_modules/

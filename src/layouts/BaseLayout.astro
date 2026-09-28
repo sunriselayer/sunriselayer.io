@@ -1,0 +1,30 @@
+---
+import '../styles/global.css';
+
+const title = 'Sunrise Edge — The serverless Layer 1';
+const description =
+	'Sunrise Edge is the world’s first serverless Layer 1 blockchain, combining low-maintenance infrastructure, parallel execution, and WebAssembly contracts.';
+const canonicalUrl = 'https://sunriselayer.io/';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="theme-color" content="#6495ed" />
+		<meta name="description" content={description} />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="canonical" href={canonicalUrl} />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<title>{title}</title>
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonicalUrl} />
+		<meta name="twitter:card" content="summary" />
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
