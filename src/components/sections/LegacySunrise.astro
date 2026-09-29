@@ -1,7 +1,10 @@
 ---
-import { Archive } from '@lucide/astro';
+import { Archive, ExternalLink } from '@lucide/astro';
 
+import { Button } from '../ui/button/index.js';
 import * as Card from '../ui/card/index.js';
+
+const previousSiteUrl = 'https://cosmos.sunriselayer.io/';
 ---
 
 <section id="previous-sunrise" class="section bg-muted/35 relative isolate overflow-hidden">
@@ -23,17 +26,24 @@ import * as Card from '../ui/card/index.js';
 					Cosmos Sunrise ends at v2.0.0.
 				</Card.Title>
 				<Card.Description>
-					The cosmos Sunrise network and https://app.sunriselayer.io/ stop at the v2.0.0 upgrade — 5
-					October 2026, 12:00 UTC, height 6,504,000. After that height the existing app is no longer
+					The cosmos Sunrise network and its previous site stop at the v2.0.0 upgrade — 5 October
+					2026, 12:00 UTC, height 6,504,000. After that height the existing app is no longer
 					provided.
 				</Card.Description>
 			</Card.Header>
 			<Card.Content>
 				<p class="text-muted-foreground max-w-2xl text-sm leading-relaxed">
 					Holdings on that network are carried over to Sunrise Edge. You do not need to use the
-					current app before it ends.
+					previous app before it ends. The previous site, including its app and explorer, remains at
+					cosmos.sunriselayer.io until shutdown.
 				</p>
 			</Card.Content>
+			<Card.Footer>
+				<Button href={previousSiteUrl} variant="outline" size="lg" target="_blank" rel="noreferrer">
+					Open cosmos.sunriselayer.io
+					<ExternalLink data-icon="inline-end" />
+				</Button>
+			</Card.Footer>
 		</Card.Root>
 	</div>
 </section>
