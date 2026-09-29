@@ -1,28 +1,10 @@
 ---
-// Hero for the Sunrise Edge migration: all holdings carry over, holders do
-// nothing, and cosmos Sunrise ends at v2.0.0 (5 October 2026, 12:00 UTC,
-// height 6,504,000).
 import { ArrowDown } from '@lucide/astro';
 
 import GithubIcon from '../icons/GithubIcon.astro';
 import { Button } from '../ui/button/index.js';
 
 const githubUrl = 'https://github.com/sunriselayer/sunrise-edge';
-
-const shutdownFacts = [
-	{
-		label: 'Shutdown',
-		value: '5 October 2026\n12:00 UTC'
-	},
-	{
-		label: 'Height',
-		value: '6,504,000'
-	},
-	{
-		label: 'Upgrade',
-		value: 'v2.0.0'
-	}
-];
 ---
 
 <section id="top" class="border-border relative isolate overflow-hidden border-b">
@@ -35,43 +17,32 @@ const shutdownFacts = [
 		<div id="edge" class="flex flex-col items-start gap-7">
 			<div class="flex flex-col gap-5">
 				<p class="text-foreground font-mono text-xs font-semibold tracking-[0.22em] uppercase">
-					Migration to Sunrise Edge
+					The next Sunrise protocol
 				</p>
 				<h1
 					class="text-5xl leading-[0.98] font-semibold tracking-[-0.055em] sm:text-6xl lg:text-7xl xl:text-[5.5rem]"
 				>
-					Your assets
-					<span class="hero-gradient block">move with you.</span>
+					The blockchain that
+					<span class="hero-gradient block">rises on demand.</span>
 				</h1>
 				<p class="text-muted-foreground max-w-2xl text-lg leading-relaxed md:text-xl">
-					Sunrise is moving to Sunrise Edge, a serverless Layer 1. Every holding on cosmos Sunrise
-					is carried over. You do not need to take any action.
+					Sunrise Edge is the world’s first serverless Layer 1 — a blockchain designed to run on
+					demand across edge functions, cloud functions, and traditional servers.
 				</p>
 			</div>
-			<dl class="grid w-full max-w-2xl gap-4 sm:grid-cols-3">
-				{
-					shutdownFacts.map((fact) => (
-						<div class="border-border bg-card/80 rounded-3xl border px-4 py-3 shadow-sm">
-							<dt class="text-muted-foreground font-mono text-[0.65rem] font-semibold tracking-[0.18em] uppercase">
-								{fact.label}
-							</dt>
-							<dd class="text-foreground mt-1 text-sm font-medium tracking-tight whitespace-pre-line">
-								{fact.value}
-							</dd>
-						</div>
-					))
-				}
-			</dl>
 			<div class="flex flex-wrap gap-3">
 				<Button href={githubUrl} size="lg">
 					<GithubIcon data-icon="inline-start" />
 					Explore Sunrise Edge
 				</Button>
-				<Button href="#faq" variant="outline" size="lg">
-					Read the FAQ
+				<Button href="#architecture" variant="outline" size="lg">
+					See the architecture
 					<ArrowDown data-icon="inline-end" />
 				</Button>
 			</div>
+			<p class="text-muted-foreground text-xs leading-relaxed">
+				The next-generation Sunrise protocol is currently under active development.
+			</p>
 		</div>
 
 		<div class="relative mx-auto w-full max-w-xl" aria-hidden="true">

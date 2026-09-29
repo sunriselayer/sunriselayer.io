@@ -34,9 +34,9 @@
 
   <g font-family="Noto Sans, sans-serif">
     <text x="84" y="117" fill="#253e6d" font-size="22" font-weight="700" letter-spacing="5">SUNRISE EDGE</text>
-    <text x="82" y="287" fill="#101b32" font-size="60" font-weight="700" letter-spacing="-2">Your assets</text>
-    <text x="82" y="372" fill="#4f7fd3" font-size="68" font-weight="700" letter-spacing="-3">move with you.</text>
-    <text x="85" y="434" fill="#5b677d" font-size="26">Sunrise is moving to Sunrise Edge</text>
+    <text x="82" y="287" fill="#101b32" font-size="60" font-weight="700" letter-spacing="-2">The blockchain that</text>
+    <text x="82" y="372" fill="#4f7fd3" font-size="68" font-weight="700" letter-spacing="-3">rises on demand.</text>
+    <text x="85" y="434" fill="#5b677d" font-size="26">The serverless Layer 1</text>
     <path d="M 84 539 H 1116" stroke="#cbdaf1" stroke-width="2" />
     <text x="84" y="579" fill="#4d5b72" font-size="20">sunriselayer.io</text>
   </g>
