@@ -17,15 +17,19 @@ const year = new Date().getFullYear();
 					<p class="text-muted-foreground text-xs">Infrastructure that rises with demand.</p>
 				</div>
 			</div>
-			<Button href={githubUrl} variant="outline">
-				<GithubIcon data-icon="inline-start" />
-				GitHub
-			</Button>
+			<div class="flex flex-wrap items-center gap-3">
+				<Button href="#faq" variant="ghost">FAQ</Button>
+				<Button href="https://cosmos.sunriselayer.io/" variant="ghost">Previous Sunrise</Button>
+				<Button href={githubUrl} variant="outline">
+					<GithubIcon data-icon="inline-start" />
+					GitHub
+				</Button>
+			</div>
 		</div>
 		<Separator class="my-8" />
 		<div class="text-muted-foreground flex flex-col gap-2 text-xs sm:flex-row sm:justify-between">
 			<p>© {year} sunriselayer. All rights reserved.</p>
-			<p>Sunrise Edge is currently in development.</p>
+			<p>Cosmos Sunrise ends 5 October 2026, 12:00 UTC at height 6,504,000 (v2.0.0).</p>
 		</div>
 	</div>
 </footer>
