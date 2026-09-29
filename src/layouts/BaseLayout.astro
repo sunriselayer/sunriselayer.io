@@ -5,6 +5,7 @@ const title = 'Sunrise Edge — Your assets move with you';
 const description =
 	'Sunrise is moving to Sunrise Edge. Every holding on cosmos Sunrise is carried over, and you do not need to take any action. Cosmos Sunrise ends at v2.0.0 on 5 October 2026, 12:00 UTC (height 6,504,000). The previous site is at cosmos.sunriselayer.io.';
 const canonicalUrl = 'https://sunriselayer.io/';
+const ogImageUrl = new URL('og-image.png', canonicalUrl).href;
 ---
 
 <!doctype html>
@@ -16,13 +17,25 @@ const canonicalUrl = 'https://sunriselayer.io/';
 		<meta name="description" content={description} />
 		<meta name="generator" content={Astro.generator} />
 		<link rel="canonical" href={canonicalUrl} />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="32x32" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<title>{title}</title>
 		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="Sunrise" />
+		<meta property="og:locale" content="en_US" />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:url" content={canonicalUrl} />
-		<meta name="twitter:card" content="summary" />
+		<meta property="og:image" content={ogImageUrl} />
+		<meta property="og:image:type" content="image/png" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:alt" content="Sunrise Edge — Your assets move with you" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImageUrl} />
+		<meta name="twitter:image:alt" content="Sunrise Edge — Your assets move with you" />
 	</head>
 	<body>
 		<slot />
