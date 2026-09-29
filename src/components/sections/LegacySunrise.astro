@@ -4,7 +4,7 @@ import { Archive, ArrowRight, ExternalLink } from '@lucide/astro';
 import { Button } from '../ui/button/index.js';
 import * as Card from '../ui/card/index.js';
 
-const legacyAppUrl = 'https://app.sunriselayer.io';
+const previousSiteUrl = 'https://cosmos.sunriselayer.io/';
 ---
 
 <section id="previous-sunrise" class="section bg-muted/35 relative isolate overflow-hidden">
@@ -22,20 +22,22 @@ const legacyAppUrl = 'https://app.sunriselayer.io';
 						Previous Sunrise
 					</p>
 				</div>
-				<Card.Title>Looking for the existing Sunrise app?</Card.Title>
+				<Card.Title>Cosmos Sunrise shuts down on 5 October at 12:00 UTC.</Card.Title>
 				<Card.Description>
-					Sunrise Edge is the next-generation protocol now in development. The previous Sunrise
-					application remains available while the new architecture takes shape.
+					At the v2.0.0 upgrade on 5 October 2026, height 6,504,000, the network, app, and explorer
+					stop. The existing app will no longer be available after shutdown.
 				</Card.Description>
 			</Card.Header>
 			<Card.Content>
 				<p class="text-muted-foreground max-w-2xl text-sm leading-relaxed">
-					Continue to the current app to access the earlier Sunrise network experience.
+					Holdings on that network are carried over to Sunrise Edge. You do not need to move funds
+					or use the previous app before shutdown. The previous site remains available at
+					cosmos.sunriselayer.io until then.
 				</p>
 			</Card.Content>
 			<Card.Footer class="flex flex-wrap gap-3">
-				<Button href={legacyAppUrl} variant="outline" size="lg" target="_blank" rel="noreferrer">
-					Open app.sunriselayer.io
+				<Button href={previousSiteUrl} variant="outline" size="lg" target="_blank" rel="noreferrer">
+					Open cosmos.sunriselayer.io
 					<ExternalLink data-icon="inline-end" />
 				</Button>
 				<Button href="/migration/" variant="ghost" size="lg">
