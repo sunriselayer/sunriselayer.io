@@ -17,10 +17,13 @@ const year = new Date().getFullYear();
 					<p class="text-muted-foreground text-xs">Infrastructure that rises with demand.</p>
 				</div>
 			</div>
-			<Button href={githubUrl} variant="outline">
-				<GithubIcon data-icon="inline-start" />
-				GitHub
-			</Button>
+			<div class="flex flex-wrap items-center gap-3">
+				<Button href="/migration/" variant="ghost">Migration guide</Button>
+				<Button href={githubUrl} variant="outline">
+					<GithubIcon data-icon="inline-start" />
+					GitHub
+				</Button>
+			</div>
 		</div>
 		<Separator class="my-8" />
 		<div class="text-muted-foreground flex flex-col gap-2 text-xs sm:flex-row sm:justify-between">

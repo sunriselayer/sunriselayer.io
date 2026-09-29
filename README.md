@@ -1,6 +1,6 @@
 # sunriselayer.io
 
-The one-page website for Sunrise and the in-development Sunrise Edge protocol.
+The Sunrise Edge website. The landing page introduces the protocol, while `/migration/` explains the move from Cosmos Sunrise.
 
 ## Stack
 

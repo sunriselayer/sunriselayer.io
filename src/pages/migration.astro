@@ -1,0 +1,204 @@
+---
+import { ArrowRight, ExternalLink } from '@lucide/astro';
+
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import * as Card from '../components/ui/card/index.js';
+import { Button } from '../components/ui/button/index.js';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const questions = [
+	{
+		question: 'What happens to my assets?',
+		answer:
+			'Account balances, liquidity pool positions, and every other holding on cosmos Sunrise are carried over to Sunrise Edge.'
+	},
+	{
+		question: 'What about RISE?',
+		answer: 'RISE remains the core asset of the Sunrise Edge ecosystem. Further detail will follow.'
+	},
+	{
+		question: 'What about USDrise and USDN?',
+		answer:
+			'On Sunrise Edge the stablecoin’s backing changes from USDN, which is being sunset, to USDC. You will still be able to buy it and withdraw it as USDC to EVM chains and elsewhere.'
+	},
+	{
+		question: 'What about ATOM and other Cosmos tokens?',
+		answer:
+			'ATOM, OSMO, and other Cosmos tokens remain withdrawable to Cosmos chains after the migration.'
+	},
+	{
+		question: 'What happens to the Sunrise DEX?',
+		answer:
+			'Positions are settled when cosmos Sunrise shuts down and carried over as account balances. Sunrise Edge will not ship a DEX at launch.'
+	},
+	{
+		question: 'What happens to staking?',
+		answer:
+			'Sunrise Edge has no validators. Staking on cosmos Sunrise is settled at shutdown and added to your account balance before the migration.'
+	},
+	{
+		question: 'What happens to locked RISE?',
+		answer:
+			'Locked RISE is carried over as-is, including remaining lock state. You do not need to withdraw before cosmos Sunrise ends.'
+	},
+	{
+		question: 'Do I need to do anything?',
+		answer:
+			'No. You do not need to unbond, claim rewards, close positions, or move funds. The migration does not require a holder action.'
+	}
+];
+---
+
+<BaseLayout
+	title="Sunrise Edge migration — Your assets move with you"
+	description="Sunrise is moving to Sunrise Edge. Your holdings carry over without action. Cosmos Sunrise ends at v2.0.0 on 5 October 2026, 12:00 UTC."
+	canonicalPath="/migration/"
+	ogImagePath="/migration-og-image.png"
+	ogImageAlt="Sunrise Edge migration — Your assets move with you"
+>
+	<Header />
+	<main>
+		<section id="top" class="border-border relative isolate overflow-hidden border-b">
+			<div class="grid-backdrop pointer-events-none absolute inset-0 -z-20" aria-hidden="true">
+			</div>
+			<div class="hero-wash pointer-events-none absolute inset-0 -z-10" aria-hidden="true"></div>
+			<div class="container grid gap-12 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:py-28">
+				<div class="flex flex-col items-start gap-7">
+					<div class="flex flex-col gap-5">
+						<p class="text-foreground font-mono text-xs font-semibold tracking-[0.22em] uppercase">
+							Migration to Sunrise Edge
+						</p>
+						<h1
+							class="text-5xl leading-[0.98] font-semibold tracking-[-0.055em] sm:text-6xl lg:text-7xl"
+						>
+							Your assets
+							<span class="hero-gradient block">move with you.</span>
+						</h1>
+						<p class="text-muted-foreground max-w-2xl text-lg leading-relaxed md:text-xl">
+							Sunrise is moving to Sunrise Edge, a serverless Layer 1. Every holding on cosmos
+							Sunrise is carried over. You do not need to take any action.
+						</p>
+					</div>
+					<div class="flex flex-wrap gap-3">
+						<Button href="#faq" size="lg">
+							Read the FAQ
+							<ArrowRight data-icon="inline-end" />
+						</Button>
+						<Button href="/" variant="outline" size="lg">Explore Sunrise Edge</Button>
+					</div>
+				</div>
+
+				<Card.Root class="w-full">
+					<Card.Header>
+						<Card.Title>Cosmos Sunrise timeline</Card.Title>
+						<Card.Description>
+							The network and previous site end at the v2.0.0 upgrade.
+						</Card.Description>
+					</Card.Header>
+					<Card.Content>
+						<dl class="grid gap-6 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+							<div>
+								<dt
+									class="text-muted-foreground font-mono text-xs font-semibold tracking-[0.18em] uppercase"
+								>
+									Shutdown
+								</dt>
+								<dd class="mt-2 font-semibold">5 October 2026<br />12:00 UTC</dd>
+							</div>
+							<div>
+								<dt
+									class="text-muted-foreground font-mono text-xs font-semibold tracking-[0.18em] uppercase"
+								>
+									Height
+								</dt>
+								<dd class="mt-2 font-semibold">6,504,000</dd>
+							</div>
+							<div>
+								<dt
+									class="text-muted-foreground font-mono text-xs font-semibold tracking-[0.18em] uppercase"
+								>
+									Upgrade
+								</dt>
+								<dd class="mt-2 font-semibold">v2.0.0</dd>
+							</div>
+						</dl>
+					</Card.Content>
+				</Card.Root>
+			</div>
+		</section>
+
+		<section id="faq" class="section border-border border-b">
+			<div class="container">
+				<div class="grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-end">
+					<div>
+						<p class="text-foreground font-mono text-xs font-semibold tracking-[0.22em] uppercase">
+							FAQ
+						</p>
+						<h2 class="mt-4 text-4xl leading-tight font-semibold tracking-[-0.04em] sm:text-5xl">
+							Answers for holders.
+						</h2>
+					</div>
+					<p class="text-muted-foreground max-w-2xl text-lg leading-relaxed lg:justify-self-end">
+						Your holdings are recorded at the v2.0.0 snapshot and carried over to Sunrise Edge. You
+						do not need to prepare your wallet before the upgrade.
+					</p>
+				</div>
+
+				<div class="mt-14 grid gap-5 md:grid-cols-2">
+					{
+						questions.map((item) => (
+							<Card.Root class="h-full">
+								<Card.Header>
+									<Card.Title>{item.question}</Card.Title>
+								</Card.Header>
+								<Card.Content>
+									<p class="text-muted-foreground leading-relaxed">{item.answer}</p>
+								</Card.Content>
+							</Card.Root>
+						))
+					}
+				</div>
+			</div>
+		</section>
+
+		<section id="previous-sunrise" class="section bg-muted/35">
+			<div class="container">
+				<Card.Root>
+					<Card.Header>
+						<p
+							class="text-muted-foreground font-mono text-xs font-semibold tracking-[0.2em] uppercase"
+						>
+							Previous Sunrise
+						</p>
+						<Card.Title>Cosmos Sunrise ends at v2.0.0.</Card.Title>
+						<Card.Description>
+							The cosmos Sunrise network and its previous site stop at the v2.0.0 upgrade — 5
+							October 2026, 12:00 UTC, height 6,504,000.
+						</Card.Description>
+					</Card.Header>
+					<Card.Content>
+						<p class="text-muted-foreground max-w-2xl leading-relaxed">
+							Holdings on that network are carried over to Sunrise Edge. You do not need to use the
+							previous app before it ends. The previous site, including its app and explorer,
+							remains at cosmos.sunriselayer.io until shutdown.
+						</p>
+					</Card.Content>
+					<Card.Footer>
+						<Button
+							href="https://cosmos.sunriselayer.io/"
+							variant="outline"
+							size="lg"
+							target="_blank"
+							rel="noreferrer"
+						>
+							Open cosmos.sunriselayer.io
+							<ExternalLink data-icon="inline-end" />
+						</Button>
+					</Card.Footer>
+				</Card.Root>
+			</div>
+		</section>
+	</main>
+	<Footer />
+</BaseLayout>

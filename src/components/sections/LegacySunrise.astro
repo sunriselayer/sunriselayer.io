@@ -1,5 +1,5 @@
 ---
-import { Archive, ExternalLink } from '@lucide/astro';
+import { Archive, ArrowRight, ExternalLink } from '@lucide/astro';
 
 import { Button } from '../ui/button/index.js';
 import * as Card from '../ui/card/index.js';
@@ -33,10 +33,14 @@ const legacyAppUrl = 'https://app.sunriselayer.io';
 					Continue to the current app to access the earlier Sunrise network experience.
 				</p>
 			</Card.Content>
-			<Card.Footer>
+			<Card.Footer class="flex flex-wrap gap-3">
 				<Button href={legacyAppUrl} variant="outline" size="lg" target="_blank" rel="noreferrer">
 					Open app.sunriselayer.io
 					<ExternalLink data-icon="inline-end" />
+				</Button>
+				<Button href="/migration/" variant="ghost" size="lg">
+					Migration guide
+					<ArrowRight data-icon="inline-end" />
 				</Button>
 			</Card.Footer>
 		</Card.Root>
