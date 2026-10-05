@@ -5,6 +5,7 @@ import GithubIcon from '../icons/GithubIcon.astro';
 import { Button } from '../ui/button/index.js';
 
 const githubUrl = 'https://github.com/sunriselayer/sunrise-edge';
+const walletUrl = 'https://wallet.sunriselayer.io/';
 ---
 
 <section id="top" class="border-border relative isolate overflow-hidden border-b">
@@ -39,9 +40,12 @@ const githubUrl = 'https://github.com/sunriselayer/sunrise-edge';
 					See the architecture
 					<ArrowDown data-icon="inline-end" />
 				</Button>
+				<Button href={walletUrl} variant="outline" size="lg">Check balances</Button>
 			</div>
 			<p class="text-muted-foreground text-xs leading-relaxed">
-				The next-generation Sunrise protocol is currently under active development.
+				The next-generation Sunrise protocol is currently under active development. Cosmos Sunrise
+				balances that moved are listed at wallet.sunriselayer.io. USDrise withdrawal opens there
+				soon.
 			</p>
 		</div>
 

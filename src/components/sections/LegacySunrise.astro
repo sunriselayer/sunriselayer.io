@@ -5,6 +5,7 @@ import { Button } from '../ui/button/index.js';
 import * as Card from '../ui/card/index.js';
 
 const previousSiteUrl = 'https://cosmos.sunriselayer.io/';
+const walletUrl = 'https://wallet.sunriselayer.io/';
 ---
 
 <section id="previous-sunrise" class="section bg-muted/35 relative isolate overflow-hidden">
@@ -22,20 +23,23 @@ const previousSiteUrl = 'https://cosmos.sunriselayer.io/';
 						Previous Sunrise
 					</p>
 				</div>
-				<Card.Title>Cosmos Sunrise shuts down on 5 October at 12:00 UTC.</Card.Title>
+				<Card.Title>Cosmos Sunrise has ended.</Card.Title>
 				<Card.Description>
-					At the v2.0.0 upgrade on 5 October 2026, height 6,504,000, the network, app, and explorer
-					stop. The existing app will no longer be available after shutdown.
+					Block 6,505,100, committed at 14:56 UTC on 5 October 2026, is the final block. The app and
+					explorer no longer serve the network.
 				</Card.Description>
 			</Card.Header>
 			<Card.Content>
 				<p class="text-muted-foreground max-w-2xl text-sm leading-relaxed">
-					Holdings on that network are carried over to Sunrise Edge. You do not need to move funds
-					or use the previous app before shutdown. The previous site remains available at
-					cosmos.sunriselayer.io until then.
+					Holdings are carried over to Sunrise Edge. Review them at wallet.sunriselayer.io. USDrise
+					withdrawal opens there soon. You do not need to bridge or redeem before then.
 				</p>
 			</Card.Content>
 			<Card.Footer class="flex flex-wrap gap-3">
+				<Button href={walletUrl} size="lg">
+					View your balances
+					<ExternalLink data-icon="inline-end" />
+				</Button>
 				<Button href={previousSiteUrl} variant="outline" size="lg" target="_blank" rel="noreferrer">
 					Open cosmos.sunriselayer.io
 					<ExternalLink data-icon="inline-end" />

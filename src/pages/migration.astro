@@ -20,7 +20,7 @@ const questions = [
 	{
 		question: 'What about USDrise and USDN?',
 		answer:
-			'On Sunrise Edge the stablecoin’s backing changes from USDN, which is being sunset, to USDC. You will still be able to buy it and withdraw it as USDC to EVM chains and elsewhere.'
+			'On Sunrise Edge the stablecoin’s backing changes from USDN, which is being sunset, to USDC. Carried-over USDrise can be reviewed at wallet.sunriselayer.io. Withdrawal as USDC opens there soon.'
 	},
 	{
 		question: 'What about ATOM and other Cosmos tokens?',
@@ -45,14 +45,14 @@ const questions = [
 	{
 		question: 'Do I need to do anything?',
 		answer:
-			'No. You do not need to unbond, claim rewards, close positions, or move funds. The migration does not require a holder action.'
+			'No. You do not need to unbond, claim rewards, close positions, or move funds. The balances that moved are listed at wallet.sunriselayer.io.'
 	}
 ];
 ---
 
 <BaseLayout
 	title="Sunrise Edge migration — Your assets move with you"
-	description="Sunrise is moving to Sunrise Edge. Your holdings carry over without action. Cosmos Sunrise ends at v2.0.0 on 5 October 2026, 12:00 UTC."
+	description="Cosmos Sunrise ended at block 6,505,100 on 5 October 2026, 14:56 UTC. Holdings are carried over to Sunrise Edge and listed at wallet.sunriselayer.io."
 	canonicalPath="/migration/"
 	ogImagePath="/migration-og-image.png"
 	ogImageAlt="Sunrise Edge migration — Your assets move with you"
@@ -76,25 +76,23 @@ const questions = [
 							<span class="hero-gradient block">move with you.</span>
 						</h1>
 						<p class="text-muted-foreground max-w-2xl text-lg leading-relaxed md:text-xl">
-							Sunrise is moving to Sunrise Edge, a serverless Layer 1. Every holding on cosmos
-							Sunrise is carried over. You do not need to take any action.
+							Cosmos Sunrise has ended. Holdings are carried over to Sunrise Edge. Review the
+							balances that moved at wallet.sunriselayer.io. USDrise withdrawal opens there soon.
 						</p>
 					</div>
 					<div class="flex flex-wrap gap-3">
-						<Button href="#faq" size="lg">
-							Read the FAQ
+						<Button href="https://wallet.sunriselayer.io/" size="lg">
+							View your balances
 							<ArrowRight data-icon="inline-end" />
 						</Button>
-						<Button href="/" variant="outline" size="lg">Explore Sunrise Edge</Button>
+						<Button href="#faq" variant="outline" size="lg">Read the FAQ</Button>
 					</div>
 				</div>
 
 				<Card.Root class="w-full">
 					<Card.Header>
-						<Card.Title>Cosmos Sunrise timeline</Card.Title>
-						<Card.Description>
-							The network and previous site end at the v2.0.0 upgrade.
-						</Card.Description>
+						<Card.Title>Cosmos Sunrise has ended</Card.Title>
+						<Card.Description>Block 6,505,100 is the final block of sunrise-1.</Card.Description>
 					</Card.Header>
 					<Card.Content>
 						<dl class="grid gap-6 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
@@ -104,7 +102,7 @@ const questions = [
 								>
 									Shutdown
 								</dt>
-								<dd class="mt-2 font-semibold">5 October 2026<br />12:00 UTC</dd>
+								<dd class="mt-2 font-semibold">5 October 2026<br />14:56 UTC</dd>
 							</div>
 							<div>
 								<dt
@@ -112,15 +110,15 @@ const questions = [
 								>
 									Height
 								</dt>
-								<dd class="mt-2 font-semibold">6,504,000</dd>
+								<dd class="mt-2 font-semibold">6,505,100</dd>
 							</div>
 							<div>
 								<dt
 									class="text-muted-foreground font-mono text-xs font-semibold tracking-[0.18em] uppercase"
 								>
-									Upgrade
+									Status
 								</dt>
-								<dd class="mt-2 font-semibold">v2.0.0</dd>
+								<dd class="mt-2 font-semibold">Ended</dd>
 							</div>
 						</dl>
 					</Card.Content>
@@ -140,8 +138,8 @@ const questions = [
 						</h2>
 					</div>
 					<p class="text-muted-foreground max-w-2xl text-lg leading-relaxed lg:justify-self-end">
-						Your holdings are recorded at the v2.0.0 snapshot and carried over to Sunrise Edge. You
-						do not need to prepare your wallet before the upgrade.
+						The balances that moved are listed at wallet.sunriselayer.io. You do not need to bridge
+						or redeem them yourself. USDrise withdrawal opens there soon.
 					</p>
 				</div>
 
@@ -171,20 +169,23 @@ const questions = [
 						>
 							Previous Sunrise
 						</p>
-						<Card.Title>Cosmos Sunrise shuts down on 5 October at 12:00 UTC.</Card.Title>
+						<Card.Title>Cosmos Sunrise has ended.</Card.Title>
 						<Card.Description>
-							At the v2.0.0 upgrade on 5 October 2026, height 6,504,000, the network, app, and
-							explorer stop. The existing app will no longer be available after shutdown.
+							Block 6,505,100, committed at 14:56 UTC on 5 October 2026, is the final block. The app
+							and explorer no longer serve the network.
 						</Card.Description>
 					</Card.Header>
 					<Card.Content>
 						<p class="text-muted-foreground max-w-2xl leading-relaxed">
-							Holdings on that network are carried over to Sunrise Edge. You do not need to use the
-							previous app before it ends. The previous site, including its app and explorer,
-							remains at cosmos.sunriselayer.io until shutdown.
+							Holdings are carried over to Sunrise Edge. Review them at wallet.sunriselayer.io.
+							USDrise withdrawal opens there soon.
 						</p>
 					</Card.Content>
-					<Card.Footer>
+					<Card.Footer class="flex flex-wrap gap-3">
+						<Button href="https://wallet.sunriselayer.io/" size="lg">
+							View your balances
+							<ExternalLink data-icon="inline-end" />
+						</Button>
 						<Button
 							href="https://cosmos.sunriselayer.io/"
 							variant="outline"
