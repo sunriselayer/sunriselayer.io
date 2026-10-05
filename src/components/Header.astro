@@ -3,6 +3,7 @@ import GithubIcon from './icons/GithubIcon.astro';
 import { Button } from './ui/button/index.js';
 
 const githubUrl = 'https://github.com/sunriselayer/sunrise-edge';
+const walletUrl = 'https://wallet.sunriselayer.io/';
 const isHome = Astro.url.pathname === '/';
 const topHref = isHome ? '#top' : '/#top';
 const edgeHref = isHome ? '#edge' : '/#edge';
@@ -19,6 +20,7 @@ const architectureHref = isHome ? '#architecture' : '/#architecture';
 
 		<div class="flex items-center gap-2">
 			<nav class="flex items-center gap-1 md:hidden" aria-label="Mobile navigation">
+				<Button href={walletUrl} variant="ghost" size="sm">Balances</Button>
 				<Button href={architectureHref} variant="ghost" size="sm">Why Edge</Button>
 			</nav>
 			<nav class="hidden items-center gap-7 md:flex" aria-label="Primary navigation">
@@ -31,6 +33,12 @@ const architectureHref = isHome ? '#architecture' : '/#architecture';
 					href={architectureHref}
 				>
 					Architecture
+				</a>
+				<a
+					class="text-muted-foreground hover:text-foreground text-sm transition-colors"
+					href={walletUrl}
+				>
+					Balances
 				</a>
 			</nav>
 			<Button
